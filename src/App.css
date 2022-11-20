@@ -13,6 +13,13 @@
   color: white;
 }
 
+.score-font {
+  position: absolute;
+  font-size: calc(10px + 2vmin);
+  padding: 2vmin 0px 0px 0px;
+  z-index: auto;
+}
+
 .color-red {
   color: red;
 }

@@ -9,6 +9,7 @@ function App() {
         </div>
         <div class="game">
           <div id="canva_jogo">
+            <a class="score-font">1</a>
             <div id="jogo_personagem"></div>
             <div id="jogo_quadrado1"></div>
             <div id="jogo_quadrado2"></div>
