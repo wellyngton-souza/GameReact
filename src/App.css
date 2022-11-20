@@ -35,7 +35,7 @@
 #jogo_quadrado2 {
   width: 50px;
   height: 50px;
-  background-color: red; 
+  background-color: rgb(98, 0, 255); 
   position: relative;
   top: 0px;
   left: 225px;
@@ -44,7 +44,7 @@
 #jogo_quadrado3 {
   width: 50px;
   height: 50px;
-  background-color: red; 
+  background-color: rgb(55, 226, 3); 
   position: relative;
   top: 0px;
   left: 370px;
