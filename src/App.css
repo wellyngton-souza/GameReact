@@ -13,6 +13,14 @@
   color: white;
 }
 
+.color-red {
+  color: red;
+}
+
+.color-green {
+  color: rgb(55, 226, 3);
+}
+
 #canva_jogo {
   height: 500px;
   width: 500px;

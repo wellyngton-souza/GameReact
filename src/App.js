@@ -15,6 +15,7 @@ function App() {
             <div id="jogo_quadrado3"></div>
           </div>
         </div>
+        <h7>Press <a class="color-red">A</a> or <a class="color-green">D</a></h7>
       </header>
     </div>
   );
@@ -22,7 +23,7 @@ function App() {
 
 var posicao = 2;
 document.addEventListener('keypress', function(e) {
-  if (e.key === 'a') {
+  if (e.key === 'a' || e.key === 'A') {
     posicao += -1;
     if (posicao === 1)
     {
@@ -37,7 +38,7 @@ document.addEventListener('keypress', function(e) {
       posicao = 1;
     }
   }
-  if (e.key === 'd') {
+  if (e.key === 'd' || e.key === 'D') {
     posicao += 1;
     if (posicao === 2)
     {
