@@ -1,9 +1,15 @@
 .App {
   text-align: center;
+  background-color: #282c34;
+}
+
+h3 {
+  visibility: hidden;
+  position: absolute;
 }
 
 .App-header {
-  background-color: #282c34;
+  position: relative;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -11,6 +17,8 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+
+  animation: animateInicio 5s;
 }
 
 .score-font {
@@ -73,14 +81,16 @@
   top: 300px;
   left: 225px;
 }
+
+/*--------------------------Animações----------------------------*/
 .andar_esquerda{
-  animation: personagem_esquerda infinite 190ms;
+  animation: personagem_esquerda infinite 300ms;
 }
 .andar_direita{
-  animation: personagem_direita infinite 190ms;
+  animation: personagem_direita infinite 300ms;
 }
 .andar_meio{
-  animation: personagem_meio infinite 190ms;
+  animation: personagem_meio infinite 300ms;
 }
 @keyframes personagem_esquerda {
   0% {
@@ -131,5 +141,43 @@
   }
   100% {
     top: 300px;
+  }
+}
+@keyframes animateInicio {
+  0%{
+    opacity: 0%;
+  }
+  100%{
+    opacity: 100%;
+  }
+}
+
+/*---------------Aparelhos-Pequenos---------------*/
+@media (max-width: 750px) {
+  .App {
+    text-align: center;
+  }
+  
+  .App-header {
+    display: none;
+  }
+
+  @keyframes animateInicio {
+    0%{
+      top: -10%;
+    }
+    100%{
+      top: 49%;
+    }
+  }
+
+  h3{
+    visibility: visible;
+    position: absolute;
+    top: 49%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    animation: animateInicio 7s;
   }
 }

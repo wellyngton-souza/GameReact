@@ -1,15 +1,16 @@
-import './App.css';
+import './Game.css';
 
 function App() {
   return (
     <div className="App">
+      <h3>Esse Jogo Não vai Rodar Nem a pau meu Amigão, ir Pra um aparelho desktop ou um notebook resolverá o seu problema</h3>
       <header className="App-header">
         <div class="Title_jogo">
           <h2>Game in JavaScript</h2>
         </div>
         <div class="game">
           <div id="canva_jogo">
-            <a class="score-font">1</a>
+            <a class="score-font" id="score">0</a>
             <div id="jogo_personagem"></div>
             <div id="jogo_quadrado1"></div>
             <div id="jogo_quadrado2"></div>
@@ -23,7 +24,8 @@ function App() {
 }
 
 var posicao = 2;
-document.addEventListener('keypress', function(e) {
+
+document.addEventListener('keypress', function(e){
   if (e.key === 'a' || e.key === 'A') {
     posicao += -1;
     if (posicao === 1)
@@ -56,9 +58,17 @@ document.addEventListener('keypress', function(e) {
   }
 });
 
-posicao = 2;
+function mudarCorRed(){
+  var personagem = document.getElementById('jogo_personagem');
+  if (posicao == 1)
+  {
+    personagem.style.backgroundColor= 'red';
+  }
+}
+setTimeout(mudarCorRed, 1000);
+
 function esquerda() {
-  if (jogo_personagem.classList != 'andar_esquerda') {
+  if (jogo_personagem.classList !== 'andar_esquerda') {
     jogo_personagem.classList.add('andar_esquerda')
   }
   setTimeout(function() {
@@ -68,7 +78,7 @@ function esquerda() {
 }
 
 function meio() {
-  if (jogo_personagem.classList != 'andar_meio') {
+  if (jogo_personagem.classList !== 'andar_meio') {
     jogo_personagem.classList.add('andar_meio')
   }
   setTimeout(function() {
@@ -78,7 +88,7 @@ function meio() {
 }
 
 function direita() {
-  if (jogo_personagem.classList != 'andar_direita') {
+  if (jogo_personagem.classList !== 'andar_direita') {
     jogo_personagem.classList.add('andar_direita')
   }
   setTimeout(function() {
