@@ -1,3 +1,4 @@
+import { keyboard } from '@testing-library/user-event/dist/keyboard';
 import './Game.css';
 
 function App() {
@@ -24,17 +25,74 @@ function App() {
 }
 
 var posicao = 2;
+var start = new Boolean(false);
+
+var min = Math.ceil(1);
+var max = Math.floor(3);
+var resultado = Math.floor(Math.random() * (max - min + 1)) + min;
+
+window.addEventListener('load',function(){
+    if(start==false)
+    {
+      var inimigo1 = document.getElementById('jogo_quadrado1');
+      inimigo1.style.cssText =
+        'visibility: hidden;';
+        var inimigo2 = document.getElementById('jogo_quadrado2');
+      inimigo2.style.cssText =
+        'visibility: hidden;';
+        var inimigo3 = document.getElementById('jogo_quadrado3');
+      inimigo3.style.cssText =
+        'visibility: hidden;';
+        var score = document.getElementById('score');
+        score.style.cssText =
+        'color: rgb(245, 245, 245)';
+        var score = document.getElementById('score');
+        score.innerHTML = 'Press Space to Start';
+    }
+});
 
 document.addEventListener('keypress', function(e){
+  if (start != true)
+  {
+    if(e.keyCode == 32)
+    {
+      start = true;
+      var inimigo1 = document.getElementById('jogo_quadrado1');
+      inimigo1.style.cssText =
+        'visibility: visible;'+
+        'animation: quadrado1 infinite linear 1s;';
+        var inimigo2 = document.getElementById('jogo_quadrado2');
+      inimigo2.style.cssText =
+        'visibility: visible;'+
+        'animation: quadrado2 infinite linear 1s;';
+        var inimigo3 = document.getElementById('jogo_quadrado3');
+      inimigo3.style.cssText =
+        'visibility: visible;'+
+        'animation: quadrado3 infinite linear 1s;';
+        var score = document.getElementById('score');
+        score.innerHTML = '0';
+    }
+  }
+
   if (e.key === 'a' || e.key === 'A') {
     posicao += -1;
     if (posicao === 1)
     {
       esquerda();
-    }
+      if (start == true)
+      {
+        var personagem = document.getElementById('jogo_personagem');
+          personagem.style.backgroundColor= 'red';
+      }
+    } 
     if (posicao === 2)
     {
       meio();
+      if (start == true)
+      {
+        var personagem = document.getElementById('jogo_personagem');
+          personagem.style.backgroundColor= 'rgb(98, 0, 255)';
+      }
     }
     if (posicao < 1)
     {
@@ -46,10 +104,20 @@ document.addEventListener('keypress', function(e){
     if (posicao === 2)
     {
       meio();
+      if (start == true)
+      {
+      var personagem = document.getElementById('jogo_personagem');
+          personagem.style.backgroundColor= 'rgb(98, 0, 255)';
+      }
     }
     if (posicao === 3)
     {
       direita();
+      if (start == true)
+      {
+        var personagem = document.getElementById('jogo_personagem');
+          personagem.style.backgroundColor= 'rgb(55, 226, 3)';
+      }
     }
     if (posicao > 3)
     {
@@ -57,15 +125,6 @@ document.addEventListener('keypress', function(e){
     }
   }
 });
-
-function mudarCorRed(){
-  var personagem = document.getElementById('jogo_personagem');
-  if (posicao == 1)
-  {
-    personagem.style.backgroundColor= 'red';
-  }
-}
-setTimeout(mudarCorRed, 1000);
 
 function esquerda() {
   if (jogo_personagem.classList !== 'andar_esquerda') {

@@ -26,6 +26,7 @@ h3 {
   font-size: calc(10px + 2vmin);
   padding: 2vmin 0px 0px 0px;
   z-index: auto;
+  left: 49%;
 }
 
 .color-red {
@@ -53,7 +54,6 @@ h3 {
   position: relative;
   top: 0px;
   left: 80px;
-  animation: quadrado1 infinite linear 1s;
 }
 #jogo_quadrado2 {
   width: 50px;
@@ -62,7 +62,6 @@ h3 {
   position: relative;
   top: 0px;
   left: 225px;
-  animation: quadrado2 infinite linear 1s;
 }
 #jogo_quadrado3 {
   width: 50px;
@@ -71,7 +70,6 @@ h3 {
   position: relative;
   top: 0px;
   left: 370px;
-  animation: quadrado3 infinite linear 1s;
 }
 #jogo_personagem {
   width: 50px;
